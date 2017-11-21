@@ -9,11 +9,28 @@ body {
     width: 100%;
     height: 100%;
 }
+.grid-item {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 5px;
+    @media (max-width: 800px) {
+        width: 100%;
+        float: none;
+    }
+}
 .frame {
-    width: 560px;
-    height: 315px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .frame-wrap {
+    padding-top: 56.25%; /* (9:16)*100% */
+    position: relative;
+    width: 100%;
+    //height: 315px;
     border-radius: 6px;
     overflow: hidden;
     display: inline-block;
@@ -21,7 +38,6 @@ body {
     iframe {
         display: block;
     }
-    float: left;
     &:hover {
         animation: animate2 0.5s linear;
     }
@@ -48,6 +64,12 @@ body {
     padding: 20px;
     background: #355C7D;
     background: linear-gradient(45deg, #C06C84, #6C5B7B, #355C7D);
+    @media (min-width: 1300px) {
+        padding: 30px 10% 30px 10%;
+    }
+    @media (max-width: 800px) {
+        padding: 10px;
+    }
 }
 .loaders-wrap {
     width: 140px;
@@ -100,7 +122,6 @@ body {
     color: #ffffff;
     opacity: 0.6;
     font-weight: bold;
-    //animation: animate2 1s infinite linear;
 }
 @keyframes animate1 {
     0% {

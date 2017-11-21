@@ -18,6 +18,15 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.hbs$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'handlebars-loader'
+                    }
+                ]
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: [

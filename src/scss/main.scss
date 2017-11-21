@@ -1,12 +1,126 @@
+html {
+    width: 100%;
+    height: 100%;
+}
 body {
-    h1 {
-        color: #6d8eb7;
-        font-family: Arial;
+    padding: 0;
+    margin: 0;
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+.frame {
+    width: 560px;
+    height: 315px;
+}
+.frame-wrap {
+    border-radius: 6px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    iframe {
+        display: block;
+    }
+    float: left;
+    &:hover {
+        animation: animate2 0.5s linear;
     }
 }
-.wrap {
-    margin: 20px;
-    border-radius: 4px;
+.abs {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.preloader {
+    z-index: 1000;
+    background: #E55D87;
+    background: linear-gradient(to right, #5FC3E4, #E55D87);
+    &.hidden {
+        display: none;
+    }
+}
+.main {
+    text-align: center;
+    overflow: auto;
+    z-index: 1;
     padding: 20px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+    background: #355C7D;
+    background: linear-gradient(45deg, #C06C84, #6C5B7B, #355C7D);
+}
+.loaders-wrap {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.l-in {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border: 10px solid rgba(255,255,255,.5);
+    border-radius: 10px;
+}
+.a1 {
+    transform: rotate(60deg);
+}
+.a2 {
+    transform: rotate(120deg);
+}
+.a3 {
+    transform: rotate(180deg);
+}
+.a4 {
+    transform: rotate(240deg);
+}
+.a5 {
+    transform: rotate(300deg);
+}
+.anim-rotate {
+    animation: animate1 3s infinite linear;
+}
+.l-text {
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    opacity: 0.6;
+    font-weight: bold;
+    //animation: animate2 1s infinite linear;
+}
+@keyframes animate1 {
+    0% {
+        transform: rotate(0deg) scale(1.0);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.5);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.0);
+    }
+}
+@keyframes animate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }

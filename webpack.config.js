@@ -57,5 +57,8 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CleanWebpackPlugin(['dist'])
-    ]
+    ],
+    devServer: {
+        port: 9000
+    }
 }
